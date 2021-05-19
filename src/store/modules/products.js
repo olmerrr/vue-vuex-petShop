@@ -10,7 +10,7 @@ const actions = {
     initStore: ({commit}) => {
       axios.get('static/products.json')
       .then((response) =>{
-        console.log(response.data.products);
+        // console.log(response.data.products);
         commit('SET_STORE', response.data.products )
       });
     }

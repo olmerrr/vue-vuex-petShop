@@ -2,7 +2,7 @@
   <div>
   <my-header :cartItemCount="cartItemCount"></my-header>
   <main>
-  <div v-for="product in sortedProducts" :key="product">
+  <div v-for="(product, index) in sortedProducts" :key="index"> 
     <div class="row">
       <div class="col-md-5 col-md-offset-0">
         <figure>
@@ -37,7 +37,7 @@
         </transition>
         <div class="rating">
           <span  v-bind:class="{'rating-active' :checkRating(n, product)}"
-             v-for="n in 5"  :key="n">☆
+             v-for="(n, index) in 5"  :key="index">☆
           </span>
         </div>
       </div><!-- end of col-md-6-->
@@ -48,7 +48,7 @@
   </div>
 </template>
 <script>
-import MyHeader from './Header.vue';
+import MyHeader from '@/components/Header.vue';
 import {mapGetters} from 'vuex';
 export default {
   name: 'imain',
